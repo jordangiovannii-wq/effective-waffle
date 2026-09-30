@@ -2,20 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Reservoir Pet Care — Dog Walking &amp; Pet Services in Reservoir &amp; Preston</title>
   <meta name="description" content="Solo, hands-on dog walking, mobile grooming and overnight pet care based in Reservoir, serving Reservoir and Preston, Melbourne." />
+  <meta name="theme-color" content="#060505" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600&amp;family=Marcellus&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="Reservoir Pet Care home">
-        <span class="brand-mark" aria-hidden="true">🐾</span>
-        <span class="brand-text">Reservoir Pet Care</span>
+        <svg class="crest" viewBox="0 0 64 72" aria-hidden="true">
+          <path d="M14 20h36v22c0 13-9 20-18 24-9-4-18-11-18-24V20z" fill="rgba(232,94,36,0.08)" stroke="#E85E24" stroke-width="2.5" />
+          <circle cx="24" cy="10" r="3.2" fill="#E85E24" />
+          <circle cx="32" cy="7" r="3.2" fill="#E85E24" />
+          <circle cx="40" cy="10" r="3.2" fill="#E85E24" />
+          <text x="32" y="50" text-anchor="middle" font-family="Marcellus, Georgia, serif" font-size="20" fill="#F5F1E8">RP</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Reservoir Pet Care</span>
+          <span class="brand-sub">Reservoir &amp; Preston</span>
+        </span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
         <span class="sr-only">Toggle menu</span>
@@ -25,11 +38,10 @@
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#book">Book</a></li>
           <li><a href="#walk-report">Walk reports</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#about">About</a></li>
-          <li><a class="nav-cta" href="#book">Request a booking</a></li>
+          <li><a class="btn btn-primary btn-sm" href="#book">Book <span aria-hidden="true">→</span></a></li>
         </ul>
       </nav>
     </div>
@@ -37,104 +49,108 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow">Reservoir &amp; Preston, Melbourne</p>
-          <h1>Friendly, hands-on care for your dog &mdash; from one local who actually shows up.</h1>
-          <p class="lede">
-            I'm Leighton, a solo pet carer based in Reservoir. Every walk, groom and overnight
-            stay is done by me personally &mdash; no rotating team, no handing your dog off to a stranger.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#book">Request a booking</a>
-            <a class="btn btn-ghost" href="#pricing">See pricing</a>
-          </div>
-          <ul class="hero-points">
-            <li>Based in Reservoir, serving Reservoir &amp; Preston</li>
-            <li>One carer, start to finish</li>
-            <li>A photo-and-notes report after every walk</li>
-          </ul>
+    <section class="hero" id="top">
+      <div class="hero-image">
+        <img src="images/hero-dog.jpg" alt="Studio portrait of a black dog emerging from darkness" width="900" height="1350" fetchpriority="high" />
+      </div>
+      <div class="container hero-copy">
+        <h1 class="display">
+          <span class="line-mask"><span class="line-in" style="animation-delay:.35s">One carer.</span></span>
+          <span class="line-mask"><span class="line-in" style="animation-delay:.5s"><span class="accent">Every walk.</span></span></span>
+        </h1>
+        <p class="hero-lede fade-in" style="animation-delay:.9s">
+          I'm Leighton &mdash; a solo pet carer based in Reservoir. Dog walking, mobile grooming and
+          overnight care, done by me personally. No rotating team, no strangers.
+        </p>
+        <div class="hero-pill fade-in" style="animation-delay:1.05s">
+          <span class="label hero-pill-note"><span class="pulse-dot"></span>Reservoir &middot; Preston</span>
+          <a class="btn btn-primary" href="#book">Request a booking <span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-card" aria-hidden="false">
-          <div class="hero-card-row">
-            <span class="hero-card-emoji">🦮</span>
-            <div>
-              <strong>Single walk</strong>
-              <span>$30</span>
-            </div>
-          </div>
-          <div class="hero-card-row">
-            <span class="hero-card-emoji">📅</span>
-            <div>
-              <strong>Regular walks</strong>
-              <span>$25 each (2+/week)</span>
-            </div>
-          </div>
-          <div class="hero-card-row">
-            <span class="hero-card-emoji">✂️</span>
-            <div>
-              <strong>Mobile grooming</strong>
-              <span>from $60</span>
-            </div>
-          </div>
-          <div class="hero-card-row">
-            <span class="hero-card-emoji">🌙</span>
-            <div>
-              <strong>Overnight care</strong>
-              <span>$80 / night</span>
-            </div>
-          </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="section" id="philosophy">
+      <div class="container philosophy">
+        <div class="philosophy-photo reveal">
+          <img src="images/philosophy-dog.jpg" alt="A black dog peeks into the frame against a cream background" width="900" height="1125" loading="lazy" />
+        </div>
+        <div class="philosophy-panel reveal" style="--delay:120ms">
+          <div class="rule"></div>
+          <h2 class="display">Slow hands.<br />Sharp eyes.<br /><span class="accent">Soft voices.</span></h2>
+          <p>
+            I'd rather do a few things well for my own neighbourhood than spread myself thin.
+            That means a short client list, walks at your dog's pace, and trust that's earned &mdash;
+            never assumed.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section">
+    <section id="services" class="section hairline-t">
       <div class="container">
-        <div class="section-head">
-          <h2>What I offer</h2>
-          <p>A small, focused set of services so I can do each one properly.</p>
+        <div class="section-head reveal">
+          <div>
+            <p class="label accent">The services</p>
+            <h2 class="display">Three things,<br />done properly</h2>
+          </div>
+          <p class="section-aside">A small, focused set of services so I can give each one my full attention.</p>
         </div>
-        <div class="cards-grid">
-          <article class="info-card">
-            <span class="info-card-emoji" aria-hidden="true">🦮</span>
-            <h3>Dog walking</h3>
-            <p>
-              Solo, attentive walks around Reservoir and Preston. Your dog is walked alone or with
-              your own household dogs &mdash; never thrown into a big pack.
-            </p>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-media">
+              <img src="images/walking.jpg" alt="Black and white photo of a spaniel on a lead in a park" width="1122" height="750" loading="lazy" />
+              <span class="stroke-number" aria-hidden="true">01</span>
+            </div>
+            <div class="service-body">
+              <p class="label accent">01 / Walking</p>
+              <h3 class="display">Dog walking</h3>
+              <p>Attentive walks around Reservoir and Preston. Your dog is walked alone or with your own household dogs &mdash; never thrown into a big pack.</p>
+              <p class="label muted">Single walks &middot; Regular walks</p>
+            </div>
           </article>
-          <article class="info-card">
-            <span class="info-card-emoji" aria-hidden="true">✂️</span>
-            <h3>Mobile grooming</h3>
-            <p>
-              A wash, tidy and brush-out done at your place, so your dog stays in a setting it knows.
-              Booked as needed alongside walks.
-            </p>
+          <article class="service-card reveal" style="--delay:120ms">
+            <div class="service-media">
+              <img src="images/grooming.jpg" alt="Close-up of a dog's nails being trimmed" width="1200" height="627" loading="lazy" />
+              <span class="stroke-number" aria-hidden="true">02</span>
+            </div>
+            <div class="service-body">
+              <p class="label accent">02 / Grooming</p>
+              <h3 class="display">Mobile grooming</h3>
+              <p>A wash, tidy and brush-out done at your place, so your dog stays somewhere it knows. Booked as needed alongside walks.</p>
+              <p class="label muted">Wash &middot; Tidy &middot; Brush-out</p>
+            </div>
           </article>
-          <article class="info-card">
-            <span class="info-card-emoji" aria-hidden="true">🌙</span>
-            <h3>Overnight care</h3>
-            <p>
-              Overnight stays for when you're away, so your pet keeps its routine and company through
-              the night.
-            </p>
+          <article class="service-card reveal" style="--delay:240ms">
+            <div class="service-media">
+              <img src="images/puppy.jpg" alt="Close-up of a sleeping puppy's paw" width="421" height="750" loading="lazy" />
+              <span class="stroke-number" aria-hidden="true">03</span>
+            </div>
+            <div class="service-body">
+              <p class="label accent">03 / Overnight</p>
+              <h3 class="display">Overnight care</h3>
+              <p>Overnight stays for when you're away, so your pet keeps its routine and has company through the night.</p>
+              <p class="label muted">Feeding &middot; Walks &middot; Settling in</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section id="pricing" class="section section-alt">
+    <section id="pricing" class="section hairline-t">
       <div class="container">
-        <div class="section-head">
-          <h2>Simple, upfront pricing</h2>
-          <p>No payment is taken on this site &mdash; you book a request and we sort out the details together.</p>
+        <div class="section-head reveal">
+          <div>
+            <p class="label accent">Pricing</p>
+            <h2 class="display">Simple &amp;<br />upfront</h2>
+          </div>
+          <p class="section-aside">No payment is taken on this site &mdash; you send a request and we sort out the details together.</p>
         </div>
         <div class="pricing-grid">
-          <article class="price-card">
-            <h3>Single walk</h3>
+          <article class="price-card reveal">
+            <h3 class="label">Single walk</h3>
             <p class="price"><span class="price-amount">$30</span><span class="price-unit">/ walk</span></p>
             <ul class="price-features">
               <li>One-off or occasional walks</li>
@@ -144,9 +160,9 @@
             <a class="btn btn-outline" href="#book" data-prefill-service="Single walk">Choose</a>
           </article>
 
-          <article class="price-card price-card-featured">
-            <span class="price-badge">Best value</span>
-            <h3>Regular walks</h3>
+          <article class="price-card price-card-featured reveal" style="--delay:80ms">
+            <span class="price-badge label">Best value</span>
+            <h3 class="label">Regular walks</h3>
             <p class="price"><span class="price-amount">$25</span><span class="price-unit">/ walk</span></p>
             <ul class="price-features">
               <li>For 2 or more walks a week</li>
@@ -156,9 +172,9 @@
             <a class="btn btn-primary" href="#book" data-prefill-service="Regular walks (2+/week)">Choose</a>
           </article>
 
-          <article class="price-card">
-            <h3>Mobile grooming</h3>
-            <p class="price"><span class="price-amount">from $60</span></p>
+          <article class="price-card reveal" style="--delay:160ms">
+            <h3 class="label">Mobile grooming</h3>
+            <p class="price"><span class="price-from">from</span><span class="price-amount">$60</span></p>
             <ul class="price-features">
               <li>Done at your home</li>
               <li>Wash, tidy &amp; brush-out</li>
@@ -167,8 +183,8 @@
             <a class="btn btn-outline" href="#book" data-prefill-service="Mobile grooming">Choose</a>
           </article>
 
-          <article class="price-card">
-            <h3>Overnight care</h3>
+          <article class="price-card reveal" style="--delay:240ms">
+            <h3 class="label">Overnight care</h3>
             <p class="price"><span class="price-amount">$80</span><span class="price-unit">/ night</span></p>
             <ul class="price-features">
               <li>Overnight company &amp; routine</li>
@@ -185,15 +201,52 @@
       </div>
     </section>
 
+    <!-- HOW I WORK -->
+    <section id="how" class="section hairline-t">
+      <div class="container how">
+        <div class="how-intro reveal">
+          <p class="label accent">How I work</p>
+          <h2 class="display">Care with<br /><span class="accent">intent</span></h2>
+          <p>Not a franchise, not an app marketplace. One local carer, a short list of clients, and a standard I won't dilute.</p>
+        </div>
+        <ol class="how-list">
+          <li class="reveal">
+            <span class="stroke-number" aria-hidden="true">01</span>
+            <div>
+              <h3 class="display">Me, every time</h3>
+              <p>I'm a solo operator. The person you meet is the person who walks, grooms and stays with your dog.</p>
+            </div>
+          </li>
+          <li class="reveal" style="--delay:120ms">
+            <span class="stroke-number" aria-hidden="true">02</span>
+            <div>
+              <h3 class="display">A small patch, done well</h3>
+              <p>Reservoir and Preston only. Keeping my range tight means less time in the car and more time with your dog.</p>
+            </div>
+          </li>
+          <li class="reveal" style="--delay:240ms">
+            <span class="stroke-number" aria-hidden="true">03</span>
+            <div>
+              <h3 class="display">A report after every walk</h3>
+              <p>A written route summary, a few photos and notes on how your dog was. No GPS tracking &mdash; just an honest account.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
     <!-- BOOKING FLOW -->
-    <section id="book" class="section">
+    <section id="book" class="section hairline-t">
       <div class="container">
-        <div class="section-head">
-          <h2>Request a booking</h2>
-          <p>Four quick steps. Nothing is charged here &mdash; this just sends me your request so I can confirm.</p>
+        <div class="section-head reveal">
+          <div>
+            <p class="label accent">Book</p>
+            <h2 class="display">Request a<br />booking</h2>
+          </div>
+          <p class="section-aside">Four quick steps. Nothing is charged here &mdash; this just sends me your request so I can confirm.</p>
         </div>
 
-        <div class="booking" id="booking">
+        <div class="booking reveal" id="booking">
           <ol class="booking-steps" aria-hidden="true">
             <li class="booking-step is-active" data-step-indicator="1"><span>1</span> Service</li>
             <li class="booking-step" data-step-indicator="2"><span>2</span> Date &amp; time</li>
@@ -238,46 +291,50 @@
               <p class="field-error" data-error-for="service" hidden>Please choose a service to continue.</p>
               <div class="booking-nav">
                 <span></span>
-                <button type="button" class="btn btn-primary" data-next>Next</button>
+                <button type="button" class="btn btn-primary" data-next>Next <span aria-hidden="true">→</span></button>
               </div>
             </fieldset>
 
             <!-- STEP 2: DATE & TIME -->
             <fieldset class="booking-panel" data-step="2">
               <legend>Step 2 &mdash; Pick a date &amp; time</legend>
-              <div class="field">
-                <label for="book-date">Preferred date</label>
-                <input type="date" id="book-date" name="date" required />
-              </div>
-              <div class="field">
-                <label for="book-time">Preferred time of day</label>
-                <select id="book-time" name="time" required>
-                  <option value="">Select a time&hellip;</option>
-                  <option value="Morning (7am–11am)">Morning (7am&ndash;11am)</option>
-                  <option value="Midday (11am–2pm)">Midday (11am&ndash;2pm)</option>
-                  <option value="Afternoon (2pm–5pm)">Afternoon (2pm&ndash;5pm)</option>
-                  <option value="Evening (5pm–8pm)">Evening (5pm&ndash;8pm)</option>
-                  <option value="Overnight">Overnight</option>
-                </select>
+              <div class="field-row">
+                <div class="field">
+                  <label for="book-date">Preferred date</label>
+                  <input type="date" id="book-date" name="date" required />
+                </div>
+                <div class="field">
+                  <label for="book-time">Preferred time of day</label>
+                  <select id="book-time" name="time" required>
+                    <option value="">Select a time&hellip;</option>
+                    <option value="Morning (7am–11am)">Morning (7am&ndash;11am)</option>
+                    <option value="Midday (11am–2pm)">Midday (11am&ndash;2pm)</option>
+                    <option value="Afternoon (2pm–5pm)">Afternoon (2pm&ndash;5pm)</option>
+                    <option value="Evening (5pm–8pm)">Evening (5pm&ndash;8pm)</option>
+                    <option value="Overnight">Overnight</option>
+                  </select>
+                </div>
               </div>
               <p class="field-error" data-error-for="datetime" hidden>Please choose a date and a time.</p>
               <p class="field-hint">I'll confirm whether the slot works before anything is locked in.</p>
               <div class="booking-nav">
                 <button type="button" class="btn btn-ghost" data-prev>Back</button>
-                <button type="button" class="btn btn-primary" data-next>Next</button>
+                <button type="button" class="btn btn-primary" data-next>Next <span aria-hidden="true">→</span></button>
               </div>
             </fieldset>
 
             <!-- STEP 3: CONTACT DETAILS -->
             <fieldset class="booking-panel" data-step="3">
               <legend>Step 3 &mdash; Your details</legend>
-              <div class="field">
-                <label for="book-name">Your name</label>
-                <input type="text" id="book-name" name="name" autocomplete="name" required />
-              </div>
-              <div class="field">
-                <label for="book-email">Email</label>
-                <input type="email" id="book-email" name="email" autocomplete="email" required />
+              <div class="field-row">
+                <div class="field">
+                  <label for="book-name">Your name</label>
+                  <input type="text" id="book-name" name="name" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="book-email">Email</label>
+                  <input type="email" id="book-email" name="email" autocomplete="email" required />
+                </div>
               </div>
               <div class="field">
                 <label for="book-suburb">Suburb</label>
@@ -295,7 +352,7 @@
               <p class="field-error" data-error-for="details" hidden>Please add your name, a valid email and your suburb.</p>
               <div class="booking-nav">
                 <button type="button" class="btn btn-ghost" data-prev>Back</button>
-                <button type="button" class="btn btn-primary" data-next>Review</button>
+                <button type="button" class="btn btn-primary" data-next>Review <span aria-hidden="true">→</span></button>
               </div>
             </fieldset>
 
@@ -306,7 +363,7 @@
               <dl class="confirm-summary" id="confirm-summary"></dl>
               <div class="booking-nav">
                 <button type="button" class="btn btn-ghost" data-prev>Back</button>
-                <a href="#" class="btn btn-primary" id="confirm-send" role="button">Send request by email</a>
+                <a href="#" class="btn btn-primary" id="confirm-send" role="button">Email my request <span aria-hidden="true">→</span></a>
               </div>
               <p class="field-hint">
                 Prefer to write yourself? Email me at
@@ -319,19 +376,22 @@
     </section>
 
     <!-- WALK REPORT -->
-    <section id="walk-report" class="section section-alt">
+    <section id="walk-report" class="section hairline-t">
       <div class="container">
-        <div class="section-head">
-          <h2>A report after every walk</h2>
-          <p>
-            You always know how the walk went. Here's the kind of card I put together &mdash; a route
-            summary, a few photos and notes on how your dog was. (No GPS tracking; it's a written summary.)
+        <div class="section-head reveal">
+          <div>
+            <p class="label accent">Walk reports</p>
+            <h2 class="display">You'll know<br />how it went</h2>
+          </div>
+          <p class="section-aside">
+            After every walk you get a card like this &mdash; a route summary, a few photos and notes on
+            how your dog was. (No GPS tracking; it's a written summary.)
           </p>
         </div>
 
         <div class="walk-report-layout">
           <!-- Example report card -->
-          <article class="report-card" aria-label="Example walk report">
+          <article class="report-card reveal" aria-label="Example walk report">
             <header class="report-card-head">
               <div>
                 <h3>Walk report &mdash; Bella</h3>
@@ -346,9 +406,9 @@
               <div><dt>Water</dt><dd>Offered, drank well</dd></div>
             </dl>
             <div class="report-photos" aria-hidden="true">
-              <span class="report-photo">🐕</span>
-              <span class="report-photo">🌳</span>
-              <span class="report-photo">🦴</span>
+              <img src="images/walking.jpg" alt="" loading="lazy" />
+              <img src="images/philosophy-dog.jpg" alt="" loading="lazy" />
+              <img src="images/puppy.jpg" alt="" loading="lazy" />
             </div>
             <p class="report-notes">
               <strong>Notes:</strong> Bella was bright and keen the whole way. Said hello to a calm
@@ -357,9 +417,9 @@
           </article>
 
           <!-- Fillable report (for the carer) -->
-          <div class="report-builder">
+          <div class="report-builder reveal" style="--delay:120ms">
             <h3>Build a walk report</h3>
-            <p class="field-hint">A working version of the card above &mdash; fill it in and preview before sending to an owner.</p>
+            <p class="field-hint">A working version of the card &mdash; fill it in and preview before sending to an owner.</p>
             <form id="report-form">
               <div class="field">
                 <label for="rep-dog">Dog's name</label>
@@ -387,11 +447,11 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section">
+    <section id="faq" class="section hairline-t">
       <div class="container container-narrow">
-        <div class="section-head">
-          <h2>Frequently asked questions</h2>
-          <p>Straight answers about how I work.</p>
+        <div class="section-head section-head-stack reveal">
+          <p class="label accent">FAQ</p>
+          <h2 class="display">Straight answers</h2>
         </div>
         <div class="accordion" id="faq-accordion">
           <div class="accordion-item">
@@ -465,23 +525,36 @@
               <p>I'll be straight with you: my ABN isn't registered yet, and I don't advertise insurance or background checks I can't currently back up. If any of that changes, this page will say so.</p>
             </div>
           </div>
+
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-7">
+                What happens to the details I send?
+                <span class="accordion-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion-panel" id="faq-7" role="region" hidden>
+              <p>This site doesn't store anything. Your booking request arrives as a normal email, and I only use it to arrange care for your pet. Ask me any time and I'll delete it.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT / HONEST CREDENTIALS -->
-    <section id="about" class="section section-alt">
-      <div class="container container-narrow">
-        <div class="section-head">
-          <h2>About &mdash; and an honest word on credentials</h2>
+    <section id="about" class="section hairline-t">
+      <div class="container about">
+        <div class="section-head section-head-stack reveal">
+          <p class="label accent">About</p>
+          <h2 class="display">An honest word<br />on credentials</h2>
         </div>
-        <div class="about-body">
+        <div class="about-body reveal" style="--delay:120ms">
           <p>
             I'm Leighton, a local pet carer based in Reservoir. I started this because I'd rather do a
             few things well for my own neighbourhood than spread myself thin. Right now that means dog
             walking around Reservoir and Preston, plus mobile grooming and overnight care when you need it.
           </p>
-          <h3>What's true today</h3>
+          <h3 class="label">What's true today</h3>
           <ul class="honesty-list">
             <li><strong>Solo operator.</strong> It's just me &mdash; no team, no subcontractors. Every service is done by me.</li>
             <li><strong>Studying, not yet certified.</strong> I'm working toward my Certificate III &amp; IV in Animal Companionship. They're in progress.</li>
@@ -497,23 +570,22 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container container-narrow contact-block">
-        <h2>Get in touch</h2>
+    <section id="contact" class="section hairline-t">
+      <div class="container container-narrow contact-block reveal">
+        <p class="label accent">Get in touch</p>
+        <h2 class="display">Say hello</h2>
         <p>The quickest way to reach me is email. Send a booking request above, or write to me directly.</p>
-        <p class="contact-email">
-          <a class="btn btn-primary" href="mailto:Leightoncunn@pm.me">Leightoncunn@pm.me</a>
-        </p>
-        <p class="contact-area">Based in Reservoir &middot; serving Reservoir &amp; Preston, Melbourne</p>
+        <p><a class="btn btn-primary btn-lg" href="mailto:Leightoncunn@pm.me">Leightoncunn@pm.me</a></p>
+        <p class="label muted">Based in Reservoir &middot; serving Reservoir &amp; Preston, Melbourne</p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer hairline-t">
     <div class="container footer-inner">
       <div>
-        <span class="brand"><span class="brand-mark" aria-hidden="true">🐾</span> Reservoir Pet Care</span>
-        <p class="footer-note">Solo dog walking, mobile grooming &amp; overnight care &mdash; Reservoir &amp; Preston, Melbourne.</p>
+        <p class="brand-name">Reservoir Pet Care</p>
+        <p class="label muted">Walking &middot; Grooming &middot; Overnight &mdash; Reservoir &amp; Preston</p>
       </div>
       <div class="footer-meta">
         <p><a href="mailto:Leightoncunn@pm.me">Leightoncunn@pm.me</a></p>

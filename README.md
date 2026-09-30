@@ -12,6 +12,13 @@ A small, honest marketing site for a **solo** pet carer based in **Reservoir**, 
 | Mobile grooming  | from $60         |
 | Overnight care   | $80 / night      |
 
+## Design
+
+Dark, editorial look: Anton for headlines, Marcellus for the wordmark, Inter for body text,
+and a single orange accent (`#E85E24`). Photos live in `images/` and are resized and
+compressed JPEGs (~290 KB total). Sections fade in as you scroll; this is switched off for
+visitors who have "reduce motion" enabled.
+
 ## What's on the page
 
 - **Booking flow** — a four-step request form (service → date/time → your details →
@@ -54,5 +61,6 @@ python3 -m http.server 8000
 ```
 index.html      # all page sections
 css/styles.css  # styles
-js/main.js      # nav, accordion, booking flow, walk-report builder
+js/main.js      # nav, scroll reveal, accordion, booking flow, walk-report builder
+images/         # hero, services and philosophy photos
 ```
