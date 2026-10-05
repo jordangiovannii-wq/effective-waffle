@@ -23,6 +23,9 @@ compressed JPEGs (~290 KB total).
 `js/motion.js` adds scroll and pointer animation with [GSAP](https://gsap.com) + ScrollTrigger,
 loaded from cdnjs:
 
+- **Opening intro:** a dog walks in along an orange line, stops and wags its tail, then the
+  screen lifts to reveal the site (~4 seconds). It plays once per visit, can be skipped (button,
+  Esc or a tap), and never plays with "reduce motion" on (`js/intro.js`)
 - Orange scroll-progress bar; header hides on scroll down and returns on scroll up
 - Hero dog drifts back and the copy lifts away as you scroll
 - A scrolling marquee band (services and suburbs) that speeds up with scroll speed

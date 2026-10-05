@@ -10,9 +10,55 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600&amp;family=Marcellus&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      /* Walking-dog intro: once per visit, never with "reduce motion" on */
+      var seen = false;
+      try { seen = sessionStorage.getItem("rpc-intro-seen") === "1"; } catch (e) {}
+      if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      root.classList.add("intro");
+      window.__endIntro = function () {
+        if (!root.classList.contains("intro")) return;
+        root.classList.remove("intro");
+        try { sessionStorage.setItem("rpc-intro-seen", "1"); } catch (e) {}
+      };
+      setTimeout(window.__endIntro, 8000); /* safety net if scripts fail */
+    })();
+  </script>
 </head>
 <body>
+  <div class="intro-overlay" id="intro">
+    <div class="intro-stage">
+      <svg class="intro-dog" viewBox="0 0 210 120" aria-hidden="true" focusable="false">
+        <ellipse class="dog-shadow" cx="110" cy="114" rx="62" ry="4" />
+        <g class="dog">
+          <!-- far-side legs (darker) -->
+          <g class="leg leg-ff far" transform="translate(146 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+          <g class="leg leg-bf far" transform="translate(74 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+          <!-- tail -->
+          <g class="tail"><path d="M64 46 C50 46 41 56 38 72" /></g>
+          <!-- body, neck, head -->
+          <path class="dog-fill" d="M60 51 C59 40 70 35 86 35 L132 34 C150 33 161 41 162 53 C163 65 156 75 144 76 C132 77 125 70 114 68 L94 68 C80 70 66 67 62 59 Z" />
+          <g class="head">
+            <path class="dog-fill" d="M140 52 C145 41 151 31 158 24 L173 30 C169 41 164 51 160 60 Z" />
+            <path class="dog-fill dog-ear-far" d="M166 13 L171 -8 L181 10 Z" />
+            <path class="dog-fill" d="M155 22 C157 12 167 8 176 9 C183 10 188 15 192 19 L203 25 C207 27 206 33 200 34 L186 36 C179 38 171 38 165 34 C158 31 154 28 155 22 Z" />
+            <path class="dog-fill" d="M157 18 L159 -7 L172 10 Z" />
+            <circle class="dog-eye" cx="180" cy="19" r="2" />
+            <ellipse class="dog-eye" cx="204" cy="28.5" rx="3" ry="2.4" />
+          </g>
+          <!-- near-side legs -->
+          <g class="leg leg-fn" transform="translate(150 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+          <g class="leg leg-bn" transform="translate(78 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+        </g>
+      </svg>
+      <div class="intro-ground" aria-hidden="true"></div>
+      <p class="intro-word" aria-hidden="true">Reservoir Pet Care</p>
+    </div>
+    <button type="button" class="intro-skip" id="intro-skip">Skip intro</button>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
@@ -607,6 +653,7 @@
   <script src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="js/intro.js" defer></script>
   <script src="js/motion.js" defer></script>
 </body>
 </html>
