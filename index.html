@@ -14,6 +14,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header" id="site-header">
     <div class="container header-inner">
@@ -68,6 +69,14 @@
         </div>
       </div>
     </section>
+
+    <!-- MARQUEE (decorative) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group"><span class="marquee-item solid">Dog walking</span><span class="marquee-dot"></span><span class="marquee-item outline">Reservoir</span><span class="marquee-dot"></span><span class="marquee-item solid">Mobile grooming</span><span class="marquee-dot"></span><span class="marquee-item outline">Preston</span><span class="marquee-dot"></span><span class="marquee-item solid">Overnight care</span><span class="marquee-dot"></span><span class="marquee-item outline">One carer</span><span class="marquee-dot"></span></div>
+        <div class="marquee-group"><span class="marquee-item solid">Dog walking</span><span class="marquee-dot"></span><span class="marquee-item outline">Reservoir</span><span class="marquee-dot"></span><span class="marquee-item solid">Mobile grooming</span><span class="marquee-dot"></span><span class="marquee-item outline">Preston</span><span class="marquee-dot"></span><span class="marquee-item solid">Overnight care</span><span class="marquee-dot"></span><span class="marquee-item outline">One carer</span><span class="marquee-dot"></span></div>
+      </div>
+    </div>
 
     <!-- PHILOSOPHY -->
     <section class="section" id="philosophy">
@@ -596,5 +605,8 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </body>
 </html>

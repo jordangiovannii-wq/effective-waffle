@@ -531,3 +531,38 @@ h3.display { font-size: clamp(1.5rem, 2.6vw, 2.1rem); letter-spacing: 0.02em; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Motion layer (js/motion.js adds .motion to <html>) ---------- */
+
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60; height: 2px;
+  background: var(--accent); transform: scaleX(0); transform-origin: 0 50%;
+  pointer-events: none;
+}
+html:not(.motion) .scroll-progress { display: none; }
+
+.marquee {
+  overflow: hidden; border-bottom: 1px solid var(--hairline);
+  padding: 1.4rem 0; background: var(--ink-deep);
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.motion .marquee-track { animation: none; }
+.marquee-group { display: flex; align-items: center; flex: none; }
+.marquee-item {
+  font-family: var(--font-display); text-transform: uppercase; line-height: 1;
+  font-size: clamp(2.2rem, 6vw, 4.5rem); padding: 0 1.5rem; white-space: nowrap;
+}
+.marquee-item.outline { color: transparent; -webkit-text-stroke: 1px rgba(245, 241, 232, 0.45); }
+.marquee-item.solid { color: var(--text-hi); }
+.marquee-dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent); flex: none; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.line-mask .line { display: block; }
+
+.motion .reveal,
+.motion .reveal.is-visible { opacity: 0; transform: none; transition: none; }
+.motion .report-card.reveal { opacity: 0; }
+.motion .site-header { will-change: transform; }
+.motion .btn { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+.motion .service-media img { transition: none; }
+.motion .hero-image, .motion .hero-copy { will-change: transform, opacity; }
