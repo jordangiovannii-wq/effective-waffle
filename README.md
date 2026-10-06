@@ -1,4 +1,4 @@
-# Reservoir Pet Care
+# Precision Pause
 
 A small, honest marketing site for a **solo** pet carer based in **Reservoir**, serving
 **Reservoir & Preston, Melbourne**. Static HTML/CSS/JS — no build step, no backend.

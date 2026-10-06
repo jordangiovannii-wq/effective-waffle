@@ -1,4 +1,4 @@
-/* Reservoir Pet Care — walking-dog intro
+/* Precision Pause — walking-dog intro
    The inline script in <head> decides whether it plays (once per visit, never with
    "reduce motion" on) and adds html.intro. This file animates it and lifts it away. */
 

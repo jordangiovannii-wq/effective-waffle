@@ -1,4 +1,4 @@
-/* Reservoir Pet Care — front-end interactions
+/* Precision Pause — front-end interactions
    No backend, no payments, no GPS, no chatbot. Everything here is client-side. */
 
 (function () {

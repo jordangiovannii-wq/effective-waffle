@@ -1,4 +1,4 @@
-/* Reservoir Pet Care — scroll & pointer motion (GSAP + ScrollTrigger)
+/* Precision Pause — scroll & pointer motion (GSAP + ScrollTrigger)
    Progressive enhancement: without GSAP, or with "reduce motion" on, the page
    keeps the simple CSS reveals from main.js and everything stays readable. */
 
