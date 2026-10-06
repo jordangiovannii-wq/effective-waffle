@@ -1,4 +1,4 @@
-# Reservoir Pet Care
+# Precision Pause
 
 A small, honest marketing site for a **solo** pet carer based in **Reservoir**, serving
 **Reservoir & Preston, Melbourne**. Static HTML/CSS/JS — no build step, no backend.
@@ -16,8 +16,25 @@ A small, honest marketing site for a **solo** pet carer based in **Reservoir**, 
 
 Dark, editorial look: Anton for headlines, Marcellus for the wordmark, Inter for body text,
 and a single orange accent (`#E85E24`). Photos live in `images/` and are resized and
-compressed JPEGs (~290 KB total). Sections fade in as you scroll; this is switched off for
-visitors who have "reduce motion" enabled.
+compressed JPEGs (~290 KB total).
+
+## Motion
+
+`js/motion.js` adds scroll and pointer animation with [GSAP](https://gsap.com) + ScrollTrigger,
+loaded from cdnjs:
+
+- **Opening intro:** a dog walks in along an orange line, stops and wags its tail, then the
+  screen lifts to reveal the site (~4 seconds). It plays once per visit, can be skipped (button,
+  Esc or a tap), and never plays with "reduce motion" on (`js/intro.js`)
+- Orange scroll-progress bar; header hides on scroll down and returns on scroll up
+- Hero dog drifts back and the copy lifts away as you scroll
+- A scrolling marquee band (services and suburbs) that speeds up with scroll speed
+- Headlines slide up line by line; photos wipe in; service numbers drift
+- Prices count up; the "How I work" numbers fill with orange as you read
+- The sample walk report swings in; main buttons lean toward the cursor (mouse only)
+
+It's an enhancement only. If GSAP fails to load, the page falls back to the simple CSS fade-ins.
+If the visitor has "reduce motion" turned on, all of it is switched off and content shows immediately.
 
 ## What's on the page
 

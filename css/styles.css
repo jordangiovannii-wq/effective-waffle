@@ -1,4 +1,4 @@
-/* Reservoir Pet Care — dark editorial theme */
+/* Precision Pause — dark editorial theme */
 
 :root {
   --ink-deep: #060505;
@@ -531,3 +531,85 @@ h3.display { font-size: clamp(1.5rem, 2.6vw, 2.1rem); letter-spacing: 0.02em; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Motion layer (js/motion.js adds .motion to <html>) ---------- */
+
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60; height: 2px;
+  background: var(--accent); transform: scaleX(0); transform-origin: 0 50%;
+  pointer-events: none;
+}
+html:not(.motion) .scroll-progress { display: none; }
+
+.marquee {
+  overflow: hidden; border-bottom: 1px solid var(--hairline);
+  padding: 1.4rem 0; background: var(--ink-deep);
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.motion .marquee-track { animation: none; }
+.marquee-group { display: flex; align-items: center; flex: none; }
+.marquee-item {
+  font-family: var(--font-display); text-transform: uppercase; line-height: 1;
+  font-size: clamp(2.2rem, 6vw, 4.5rem); padding: 0 1.5rem; white-space: nowrap;
+}
+.marquee-item.outline { color: transparent; -webkit-text-stroke: 1px rgba(245, 241, 232, 0.45); }
+.marquee-item.solid { color: var(--text-hi); }
+.marquee-dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--accent); flex: none; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.line-mask .line { display: block; }
+
+.motion .reveal,
+.motion .reveal.is-visible { opacity: 0; transform: none; transition: none; }
+.motion .report-card.reveal { opacity: 0; }
+.motion .site-header { will-change: transform; }
+.motion .btn { transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+.motion .service-media img { transition: none; }
+.motion .hero-image, .motion .hero-copy { will-change: transform, opacity; }
+
+/* ---------- Walking-dog intro (html.intro set by the inline script in <head>) ---------- */
+
+.intro-overlay { display: none; }
+html.intro body { overflow: hidden; }
+html.intro .intro-overlay {
+  display: flex; position: fixed; inset: 0; z-index: 200;
+  align-items: center; justify-content: center;
+  background: var(--ink-deep);
+}
+/* Hold the hero's own entrance until the intro lifts */
+html.intro:not(.intro-lifting) .hero-image img,
+html.intro:not(.intro-lifting) .line-in,
+html.intro:not(.intro-lifting) .fade-in { animation-play-state: paused; }
+
+.intro-stage { position: relative; width: min(90vw, 760px); height: 260px; }
+.intro-dog {
+  position: absolute; left: 50%; bottom: 40px; width: clamp(190px, 30vw, 300px); height: auto;
+  margin-left: calc(clamp(190px, 30vw, 300px) / -2); overflow: visible;
+}
+.intro-dog .dog-fill { fill: var(--text-hi); }
+.intro-dog .dog-eye { fill: var(--ink-deep); }
+.intro-dog .dog-shadow { fill: rgba(232, 94, 36, 0.18); }
+.intro-dog .leg line { stroke: var(--text-hi); stroke-width: 8; stroke-linecap: round; }
+.intro-dog .leg .upper > line { stroke-width: 11; }
+.intro-dog .dog-ear-far { fill: #d9d2c4; }
+.intro-dog .leg ellipse { fill: var(--text-hi); }
+.intro-dog .leg.far line { stroke: var(--text-low); }
+.intro-dog .leg.far ellipse { fill: var(--text-low); }
+.intro-dog .tail path { fill: none; stroke: var(--text-hi); stroke-width: 9; stroke-linecap: round; }
+.intro-ground {
+  position: absolute; left: 0; right: 0; bottom: 40px; height: 2px;
+  background: var(--accent); transform-origin: 0 50%;
+}
+.intro-word {
+  position: absolute; left: 0; right: 0; bottom: 0; text-align: center;
+  font-family: var(--font-brand); font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  letter-spacing: 0.32em; text-transform: uppercase; color: var(--text-mid);
+  opacity: 0; transform: translateY(10px);
+}
+.intro-skip {
+  position: absolute; right: 1.25rem; bottom: 1.25rem; min-height: 44px; padding: 0 1.1rem;
+  background: transparent; color: var(--text-mid); border: 1px solid var(--hairline-strong);
+  border-radius: 999px; font: 600 12px/1 var(--font-body); letter-spacing: 0.16em;
+  text-transform: uppercase; cursor: pointer;
+}
+.intro-skip:hover { color: var(--text-hi); border-color: var(--accent); }

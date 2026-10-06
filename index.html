@@ -3,30 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Reservoir Pet Care — Dog Walking &amp; Pet Services in Reservoir &amp; Preston</title>
+  <title>Precision Pause — Dog Walking &amp; Pet Services in Reservoir &amp; Preston</title>
   <meta name="description" content="Solo, hands-on dog walking, mobile grooming and overnight pet care based in Reservoir, serving Reservoir and Preston, Melbourne." />
   <meta name="theme-color" content="#060505" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600&amp;family=Marcellus&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add("js");
+      /* Walking-dog intro: once per visit, never with "reduce motion" on */
+      var seen = false;
+      try { seen = sessionStorage.getItem("rpc-intro-seen") === "1"; } catch (e) {}
+      if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      root.classList.add("intro");
+      window.__endIntro = function () {
+        if (!root.classList.contains("intro")) return;
+        root.classList.remove("intro");
+        try { sessionStorage.setItem("rpc-intro-seen", "1"); } catch (e) {}
+      };
+      setTimeout(window.__endIntro, 8000); /* safety net if scripts fail */
+    })();
+  </script>
 </head>
 <body>
+  <div class="intro-overlay" id="intro">
+    <div class="intro-stage">
+      <svg class="intro-dog" viewBox="0 0 210 120" aria-hidden="true" focusable="false">
+        <ellipse class="dog-shadow" cx="110" cy="114" rx="62" ry="4" />
+        <g class="dog">
+          <!-- far-side legs (darker) -->
+          <g class="leg leg-ff far" transform="translate(146 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+          <g class="leg leg-bf far" transform="translate(74 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+          <!-- tail -->
+          <g class="tail"><path d="M64 46 C50 46 41 56 38 72" /></g>
+          <!-- body, neck, head -->
+          <path class="dog-fill" d="M60 51 C59 40 70 35 86 35 L132 34 C150 33 161 41 162 53 C163 65 156 75 144 76 C132 77 125 70 114 68 L94 68 C80 70 66 67 62 59 Z" />
+          <g class="head">
+            <path class="dog-fill" d="M140 52 C145 41 151 31 158 24 L173 30 C169 41 164 51 160 60 Z" />
+            <path class="dog-fill dog-ear-far" d="M166 13 L171 -8 L181 10 Z" />
+            <path class="dog-fill" d="M155 22 C157 12 167 8 176 9 C183 10 188 15 192 19 L203 25 C207 27 206 33 200 34 L186 36 C179 38 171 38 165 34 C158 31 154 28 155 22 Z" />
+            <path class="dog-fill" d="M157 18 L159 -7 L172 10 Z" />
+            <circle class="dog-eye" cx="180" cy="19" r="2" />
+            <ellipse class="dog-eye" cx="204" cy="28.5" rx="3" ry="2.4" />
+          </g>
+          <!-- near-side legs -->
+          <g class="leg leg-fn" transform="translate(150 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+          <g class="leg leg-bn" transform="translate(78 62)"><g class="upper"><line x1="0" y1="0" x2="0" y2="24" /><g class="lower" transform="translate(0 24)"><line x1="0" y1="0" x2="0" y2="22" /><ellipse cx="4" cy="23" rx="6" ry="3" /></g></g></g>
+        </g>
+      </svg>
+      <div class="intro-ground" aria-hidden="true"></div>
+      <p class="intro-word" aria-hidden="true">Precision Pause</p>
+    </div>
+    <button type="button" class="intro-skip" id="intro-skip">Skip intro</button>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Reservoir Pet Care home">
+      <a href="#top" class="brand" aria-label="Precision Pause home">
         <svg class="crest" viewBox="0 0 64 72" aria-hidden="true">
           <path d="M14 20h36v22c0 13-9 20-18 24-9-4-18-11-18-24V20z" fill="rgba(232,94,36,0.08)" stroke="#E85E24" stroke-width="2.5" />
           <circle cx="24" cy="10" r="3.2" fill="#E85E24" />
           <circle cx="32" cy="7" r="3.2" fill="#E85E24" />
           <circle cx="40" cy="10" r="3.2" fill="#E85E24" />
-          <text x="32" y="50" text-anchor="middle" font-family="Marcellus, Georgia, serif" font-size="20" fill="#F5F1E8">RP</text>
+          <text x="32" y="50" text-anchor="middle" font-family="Marcellus, Georgia, serif" font-size="20" fill="#F5F1E8">PP</text>
         </svg>
         <span class="brand-text">
-          <span class="brand-name">Reservoir Pet Care</span>
+          <span class="brand-name">Precision Pause</span>
           <span class="brand-sub">Reservoir &amp; Preston</span>
         </span>
       </a>
@@ -68,6 +115,14 @@
         </div>
       </div>
     </section>
+
+    <!-- MARQUEE (decorative) -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group"><span class="marquee-item solid">Dog walking</span><span class="marquee-dot"></span><span class="marquee-item outline">Reservoir</span><span class="marquee-dot"></span><span class="marquee-item solid">Mobile grooming</span><span class="marquee-dot"></span><span class="marquee-item outline">Preston</span><span class="marquee-dot"></span><span class="marquee-item solid">Overnight care</span><span class="marquee-dot"></span><span class="marquee-item outline">One carer</span><span class="marquee-dot"></span></div>
+        <div class="marquee-group"><span class="marquee-item solid">Dog walking</span><span class="marquee-dot"></span><span class="marquee-item outline">Reservoir</span><span class="marquee-dot"></span><span class="marquee-item solid">Mobile grooming</span><span class="marquee-dot"></span><span class="marquee-item outline">Preston</span><span class="marquee-dot"></span><span class="marquee-item solid">Overnight care</span><span class="marquee-dot"></span><span class="marquee-item outline">One carer</span><span class="marquee-dot"></span></div>
+      </div>
+    </div>
 
     <!-- PHILOSOPHY -->
     <section class="section" id="philosophy">
@@ -584,17 +639,21 @@
   <footer class="site-footer hairline-t">
     <div class="container footer-inner">
       <div>
-        <p class="brand-name">Reservoir Pet Care</p>
+        <p class="brand-name">Precision Pause</p>
         <p class="label muted">Walking &middot; Grooming &middot; Overnight &mdash; Reservoir &amp; Preston</p>
       </div>
       <div class="footer-meta">
         <p><a href="mailto:Leightoncunn@pm.me">Leightoncunn@pm.me</a></p>
         <p>ABN not yet registered.</p>
-        <p>&copy; <span id="year"></span> Reservoir Pet Care</p>
+        <p>&copy; <span id="year"></span> Precision Pause</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="js/intro.js" defer></script>
+  <script src="js/motion.js" defer></script>
 </body>
 </html>
